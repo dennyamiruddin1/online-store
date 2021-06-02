@@ -12,7 +12,7 @@ const Item = (props) => {
 
   const addToCartHandler = () => {
     dispatch(cartActions.addItemToCart(props))
-    dispatch(uiActions.showToast());
+    dispatch(uiActions.showNotification());
   }
 
   return (

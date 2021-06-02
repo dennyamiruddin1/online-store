@@ -6,15 +6,9 @@ import Cart from './pages/cart'
 import Order from './pages/order'
 import Admin from './pages/admin'
 
-import ToastUi from './shared/ui/ToastUi'
-
 const App = () => {
   return (
-
     <Router>
-      <ToastUi
-        label="Item added!"
-      />
       <Panel />
       <main>
         <Switch>

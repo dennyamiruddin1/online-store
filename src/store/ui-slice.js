@@ -2,29 +2,26 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const uiSlice = createSlice(
   {
-    name: "toggleToast",
-    initialState: { toggle: false },
+    name: "ui",
+    initialState: { show: false, addToCartNotificationData: null, fetchingCartDataNotificationData: null },
     reducers: {
-      showToast(state) {
-        state.toggle = true;
+      showNotification(state) {
+        state.show = true;
       },
-      hideToast(state) {
-        state.toggle = false;
+      hideNotification(state) {
+        state.show = false;
+      },
+      setNotificationData(state, action) {
+        state.notification = {
+          status: action.payload.status,
+          title: action.payload.title,
+          message: action.payload.message
+        }
+        state.show = true;
+        console.log('clicked!')
       }
     }
-  },
-  {
-    name: "toggle",
-    initialState: { toggle: false },
-    reducers: {
-      show(state) {
-        state.toggle = true;
-      },
-      hide(state) {
-        state.toggle = false;
-      }
-    }
-  },
+  }
 )
 
 export const uiActions = uiSlice.actions;
