@@ -5,7 +5,7 @@ import uuid from 'react-uuid'
 import { useDispatch } from 'react-redux'
 import { productsActions } from '../../../store/product-slice'
 
-import { Form, Col, Row, Container, Button } from 'react-bootstrap'
+import { Form, Col, Row, Button } from 'react-bootstrap'
 
 const FileUpload = (props) => {
 
@@ -52,16 +52,14 @@ const FileUpload = (props) => {
   }
 
   return (
-    <Container fluid>
-      <Row>
-        <Col>
-          <Form.File id="input" label="Upload xlsx file" accept=".xls, .xlsx" onChange={uploadOnChangeHandler} onReset={uploadFileHandler} value={fileInput} />
-        </Col>
-        <Col>
-          <Button variant="dark" onClick={uploadFileHandler}>Upload</Button>
-        </Col>
-      </Row>
-    </Container>
+    <Row>
+      <Col>
+        <Form.File id="input" label="Upload xlsx file" accept=".xls, .xlsx" onChange={uploadOnChangeHandler} onReset={uploadFileHandler} value={fileInput} />
+      </Col>
+      <Col>
+        <Button variant="dark" onClick={uploadFileHandler}>Upload</Button>
+      </Col>
+    </Row>
   );
 }
 

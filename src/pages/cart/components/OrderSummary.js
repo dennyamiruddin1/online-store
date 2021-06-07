@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+
+import { orderActions } from '../../../store/order-slice'
 
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const OrderSummary = (props) => {
+
+  const dispatch = useDispatch()
+
+  const orderHandler = () => {
+    if (props.order !== null) {
+      dispatch(orderActions.replaceOrderedCart(props.cart))
+    } else {
+      return;
+    }
+  }
+
   return (
-    <Container fluid className="mt-4">
-      <Row className="justify-content-md-center mb-5">
+    <Fragment>
+      <Row className="justify-content-md-center mt-5 mb-5">
         <Col md="auto">
-          <h5>Ringkasan Belanja</h5>
+          <h5>Ringkasan Total Belanja</h5>
         </Col>
       </Row>
       <Row>
@@ -23,11 +37,10 @@ const OrderSummary = (props) => {
       </Row>
       <Row className="justify-content-md-center mb-5">
         <Container>
-          <Button variant="dark" block as={Link} to="/order">Order</Button>
+          <Button onClick={orderHandler} className="mt-3" variant="dark" block as={Link} to="/order">Pesan</Button>
         </Container>
-
       </Row>
-    </Container>
+    </Fragment>
   );
 }
 

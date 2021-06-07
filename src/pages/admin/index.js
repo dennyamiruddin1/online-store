@@ -4,15 +4,22 @@ import { useSelector } from 'react-redux'
 import FileUpload from './components/FileUpload'
 import TableView from './components/TableView'
 
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 const Admin = (props) => {
 
   const items = useSelector(state => state.products.excel_products)
+  const data = useSelector(state => state.test.list)
+  console.log(data)
   return (
     <Container fluid>
-      <FileUpload items={items} />
-      {items.length > 0 && <TableView items={items} />}
+      <Row>
+        <FileUpload items={items} />
+      </Row>
+      {items.length > 0 &&
+        <Row>
+          <TableView items={items} />
+        </Row>}
     </Container>
   );
 }

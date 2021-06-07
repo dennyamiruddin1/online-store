@@ -1,15 +1,23 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 
 import OrderForm from './components/OrderForm'
+import UserOrder from './components/UserOrder'
 
 import { Container } from 'react-bootstrap'
 
-const UserForm = (props) => {
+const Order = (props) => {
+
+  const order = useSelector(state => state.order.order)
+  const cart = useSelector(state => state.cart.cart)
+  const total = useSelector(state => state.cart.total)
+
   return (
     <Container fluid>
-      <OrderForm />
+      {order === null ? <OrderForm cart={cart} />
+        : <UserOrder order={order} total={total} />}
     </Container>
   );
 }
 
-export default UserForm;
+export default Order;

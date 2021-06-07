@@ -33,7 +33,6 @@ const Promotion = (props) => {
           src="https://images.unsplash.com/photo-1502825868325-37569f642e95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

@@ -38,7 +38,7 @@ const CartItem = (props) => {
         </Card>
       </Col>
       <Col>
-        <h6>Total Price</h6> Rp.{props.totalprice}
+        <h6>Total Price</h6> Rp.{props.totalPrice}
       </Col>
     </Row>
   );

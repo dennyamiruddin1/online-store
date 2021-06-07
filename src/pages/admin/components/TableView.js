@@ -8,7 +8,6 @@ const TableView = (props) => {
       <Table responsive>
         <thead>
           <tr>
-            <th>id</th>
             <th>Label</th>
             <th>Type</th>
             <th>Price</th>
@@ -19,9 +18,6 @@ const TableView = (props) => {
         <tbody>
           {props.items.map(item =>
             <tr key={item.id}>
-              <td>
-                {item.id}
-              </td>
               <td>
                 {item.label}
               </td>

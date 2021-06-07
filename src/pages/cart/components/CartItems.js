@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import CartItem from './CartItem'
 
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 const CartItems = (props) => {
   return (
-    <Container fluid className="mt-4">
+    <Fragment>
       <Row className="justify-content-md-center mb-5">
         <Col md="auto">
           <h5>Keranjang Belanja</h5>
@@ -22,7 +22,7 @@ const CartItems = (props) => {
             description={cartItem.description}
             quantity={cartItem.quantity}
             image={cartItem.image}
-            totalprice={cartItem.totalprice}
+            totalPrice={cartItem.totalPrice}
           />
         )
         : <Row className="justify-content-md-center">
@@ -31,7 +31,7 @@ const CartItems = (props) => {
           </Col>
         </Row>
       }
-    </Container >
+    </Fragment>
   );
 }
 
