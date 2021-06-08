@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col } from "react-bootstrap";
 
 const OrdererInformation = (props) => {
   return (
@@ -16,7 +16,7 @@ const OrdererInformation = (props) => {
       <Row>
         <Col colSpan="2">
           <b>Pengorder:</b> {props.name} ({props.phone})
-              </Col>
+        </Col>
       </Row>
       <Row>
         <Col colSpan="2">
@@ -29,7 +29,7 @@ const OrdererInformation = (props) => {
         </Col>
       </Row>
     </Fragment>
-  )
-}
+  );
+};
 
-export default OrdererInformation
+export default OrdererInformation;

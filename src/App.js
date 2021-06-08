@@ -1,10 +1,16 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-import Panel from './shared/panel'
-import Home from './pages/home'
-import Cart from './pages/cart'
-import Order from './pages/order'
-import Admin from './pages/admin'
+import Panel from "./shared/panel";
+import Footer from "./shared/footer";
+import Home from "./pages/home";
+import Cart from "./pages/cart";
+import Order from "./pages/order";
+import Admin from "./pages/admin";
 
 const App = () => {
   return (
@@ -19,8 +25,9 @@ const App = () => {
           <Redirect to="/" />
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
-}
+};
 
 export default App;

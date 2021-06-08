@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Row, Table } from 'react-bootstrap'
+import { Row, Table } from "react-bootstrap";
 
 const TableView = (props) => {
   return (
@@ -16,29 +16,19 @@ const TableView = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.items.map(item =>
+          {props.items.map((item) => (
             <tr key={item.id}>
-              <td>
-                {item.label}
-              </td>
-              <td>
-                {item.type}
-              </td>
-              <td>
-                {item.price}
-              </td>
-              <td>
-                {item.description}
-              </td>
-              <td>
-                {item.image}
-              </td>
+              <td>{item.label}</td>
+              <td>{item.type}</td>
+              <td>{item.price}</td>
+              <td>{item.description}</td>
+              <td>{item.image}</td>
             </tr>
-          )}
+          ))}
         </tbody>
       </Table>
     </Row>
   );
-}
+};
 
 export default TableView;

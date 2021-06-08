@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { Table, Row } from 'react-bootstrap'
+import { Table, Row } from "react-bootstrap";
 
 const OrderProducts = (props) => {
   return (
@@ -15,29 +15,25 @@ const OrderProducts = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.orderedCart.map(item =>
+          {props.orderedCart.map((item) => (
             <tr key={item.id}>
               <td>{item.label}</td>
               <td>{item.quantity}</td>
               <td>{item.price}</td>
               <td>{item.totalPrice}</td>
             </tr>
-          )}
+          ))}
           <tr>
             <td colSpan="4"></td>
           </tr>
           <tr>
-            <td colSpan="3">
-              Total
-            </td>
-            <td>
-              {props.total}
-            </td>
+            <td colSpan="3">Total</td>
+            <td>{props.total}</td>
           </tr>
         </tbody>
       </Table>
     </Row>
-  )
-}
+  );
+};
 
-export default OrderProducts
+export default OrderProducts;

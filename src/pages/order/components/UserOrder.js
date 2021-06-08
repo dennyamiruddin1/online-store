@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react'
-import jsPDF from 'jspdf';
+import React, { Fragment } from "react";
+import jsPDF from "jspdf";
 
-import OrdererInformation from './OrdererInformation'
-import OrderProducts from './OrderProducts'
+import OrdererInformation from "./OrdererInformation";
+import OrderProducts from "./OrderProducts";
 
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, Button } from "react-bootstrap";
 
 const UserOrder = (props) => {
-
   const placeOrderHandler = () => {
     const doc = new jsPDF("p", "pt", "a2");
     doc.html(document.querySelector("#content"), {
@@ -15,9 +14,9 @@ const UserOrder = (props) => {
         pdf.save("mypdf.pdf");
       },
       x: 150,
-      y: 10
-    })
-  }
+      y: 10,
+    });
+  };
 
   return (
     <Fragment>
@@ -40,15 +39,18 @@ const UserOrder = (props) => {
       </div>
       <Row>
         <Col>
-          <Button block variant="danger">Gagalkan</Button>
+          <Button block variant="danger">
+            Gagalkan
+          </Button>
         </Col>
         <Col sm={6}>
-          <Button onClick={placeOrderHandler} block variant="dark">Pesan</Button>
+          <Button onClick={placeOrderHandler} block variant="dark">
+            Pesan
+          </Button>
         </Col>
       </Row>
     </Fragment>
-
-  )
-}
+  );
+};
 
 export default UserOrder;

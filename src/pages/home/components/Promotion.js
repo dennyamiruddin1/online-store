@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Carousel } from 'react-bootstrap'
+import { Carousel } from "react-bootstrap";
 
 const Promotion = (props) => {
   return (
@@ -35,12 +35,13 @@ const Promotion = (props) => {
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
   );
-}
+};
 
 export default Promotion;

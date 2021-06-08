@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import Navigation from './components/Navigation'
-import Search from './components/Search'
+import Navigation from "./components/Navigation";
+import Search from "./components/Search";
 
-import { Container } from 'react-bootstrap'
+import { Container } from "react-bootstrap";
 
-const index = (props) => {
+const Panel = () => {
+  const products = useSelector((state) => state.products.products);
+
   return (
-    <Container fluid="xxl">
+    <Container fluid>
       <Navigation />
-      <Search />
+      <Search products={products} />
     </Container>
-
   );
-}
+};
 
-export default index;
+export default Panel;
