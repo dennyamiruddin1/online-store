@@ -18,6 +18,11 @@ const Search = (props) => {
     setSearchInput(event.target.value);
   };
 
+  const selectProductHandler = () => {
+    setShowList(false);
+    setSearchInput("");
+  };
+
   return (
     <Fragment>
       <div className="mb-3">
@@ -28,8 +33,6 @@ const Search = (props) => {
             </InputGroup.Text>
             <FormControl
               placeholder="Cari barang disini"
-              aria-label="Cari barang disini"
-              aria-describedby="basic-addon1"
               onChange={searchOnChangeHandler}
               value={searchInput}
             />
@@ -37,7 +40,11 @@ const Search = (props) => {
         </Row>
         {showList && (
           <Row className="position-relative">
-            <ItemList products={props.products} searchInput={searchInput} />
+            <ItemList
+              onSelectProductHandler={selectProductHandler}
+              products={props.products}
+              searchInput={searchInput}
+            />
           </Row>
         )}
       </div>

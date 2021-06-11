@@ -3,8 +3,9 @@ import * as XLSX from "xlsx";
 import uuid from "react-uuid";
 
 import { useDispatch } from "react-redux";
-import { productsActions } from "../../../store/product-slice";
+import { productsActions } from "../../../store/products-slice";
 
+import { no_picture_image } from "../../../image";
 import { Form, Col, Row, Button } from "react-bootstrap";
 
 const FileUpload = (props) => {
@@ -32,10 +33,17 @@ const FileUpload = (props) => {
     });
 
     promise.then((d) => {
-      const newData = d.map((item) => ({
-        id: "pid" + uuid(),
-        ...item,
-      }));
+      const newData = d.map((item) => {
+        if (
+          item.image === undefined ||
+          item.image === null ||
+          item.image === ""
+        ) {
+          item.image = no_picture_image;
+        }
+        return Object.assign({}, { id: "pid" + uuid() }, item);
+      });
+
       dispatch(productsActions.viewExcelProducts(newData));
     });
   };

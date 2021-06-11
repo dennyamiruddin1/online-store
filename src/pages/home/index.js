@@ -3,21 +3,21 @@ import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 import Promotion from "./components/Promotion";
-import Items from "./components/Items";
+import Products from "./components/Products";
 import ToastUi from "../../shared/ui/ToastUi";
 
 import { Container, Row, Col } from "react-bootstrap";
 
 const Home = () => {
   const products = useSelector((state) => state.products.products);
-  const quantity = useSelector((state) => state.cart.quantity);
+  const cartQuantity = useSelector((state) => state.cart.quantity);
 
   return (
     <Fragment>
       <ToastUi
         status="Sukses"
         title="Notifikasi"
-        message={`(${quantity}) produk baru berhasil di masukkan keranjang`}
+        message={`(${cartQuantity}) produk baru berhasil di masukkan keranjang`}
       />
       <Container fluid="xl">
         <Row>
@@ -26,7 +26,7 @@ const Home = () => {
           </Col>
         </Row>
         <Row className="mt-3" md={3}>
-          <Items products={products} />
+          <Products products={products} />
         </Row>
       </Container>
     </Fragment>

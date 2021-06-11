@@ -1,11 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import cartSlice from './cart-slice'
-import productsSlice from './product-slice'
-import uiSlice from './ui-slice'
-import orderSlice from './order-slice'
+import cartSlice from "./cart-slice";
+import productsSlice from "./products-slice";
+import uiSlice from "./ui-slice";
+import orderSlice from "./order-slice";
 
-import testSlice from './test-slice'
+import testSlice from "./test-slice";
 
 const store = configureStore({
   reducer: {
@@ -13,8 +13,8 @@ const store = configureStore({
     products: productsSlice.reducer,
     ui: uiSlice.reducer,
     order: orderSlice.reducer,
-    test: testSlice.reducer
-  }
+    test: testSlice.reducer,
+  },
 });
 
 export default store;

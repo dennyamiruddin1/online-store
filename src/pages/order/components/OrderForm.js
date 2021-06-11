@@ -40,7 +40,7 @@ const OrderForm = (props) => {
     dispatch(
       orderActions.addOrder({
         id: "oid" + uuid(),
-        orderer: name,
+        name: name,
         address: address + " " + province + " " + postcode,
         email: email,
         phone: phone,

@@ -1,13 +1,13 @@
 import React from "react";
 
-import Item from "./Item";
+import Product from "./Product";
 
 import { Col } from "react-bootstrap";
 
-const Items = (props) => {
+const Products = (props) => {
   return props.products.map((product) => (
     <Col key={product.id}>
-      <Item
+      <Product
         id={product.id}
         label={product.label}
         description={product.description}
@@ -18,4 +18,4 @@ const Items = (props) => {
   ));
 };
 
-export default Items;
+export default Products;

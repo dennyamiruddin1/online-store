@@ -9,7 +9,17 @@ const CartItem = (props) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(cartActions.addItemToCart(props));
+    dispatch(
+      cartActions.addItemToCart({
+        id: props.id,
+        label: props.label,
+        price: props.price,
+        description: props.description,
+        image: props.image,
+        quantity: 1,
+        totalPrice: props.price,
+      })
+    );
   };
 
   const removeFromCartHandler = () => {

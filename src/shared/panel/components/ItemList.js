@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { ListGroup } from "react-bootstrap";
 
@@ -7,8 +8,8 @@ const ItemList = (props) => {
     item.label.toLowerCase().includes(props.searchInput.toLowerCase())
   );
 
-  const listGroupHandler = (event) => {
-    console.log(event.target.value);
+  const listGroupHandler = () => {
+    props.onSelectProductHandler();
   };
 
   return (
@@ -22,7 +23,8 @@ const ItemList = (props) => {
             key={item.id}
             onClick={listGroupHandler}
             action
-            value={item.id}
+            as={Link}
+            to={`/product/${item.id}`}
           >
             {item.label}
           </ListGroup.Item>
